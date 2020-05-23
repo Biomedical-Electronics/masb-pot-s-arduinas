@@ -23,5 +23,11 @@ struct CA_Configuration_S {
 };
 
 double voltageADC;
+double currentADC;
+uint32_t measureIndex;
+uint32_t TotalMeasuresNumber;
+
+//Prototypes
+void Chronoamperometry(struct CA_Configuration_S caConfiguration);
 
 #endif /* INC_COMPONENTS_CHRONOAMPEROMETRY_H_ */
