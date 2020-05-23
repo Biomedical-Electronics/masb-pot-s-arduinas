@@ -4,7 +4,8 @@
  *  Created on: 21 de maig 2020
  *      Author: julia
  */
-*/ include "components/adc.h"
+
+#include "components/adc.h"
 
 // CELL VOLTAGE
 HAL_ADC_Start(&hadc1); //iniciamos la conversion
