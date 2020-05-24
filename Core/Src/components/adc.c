@@ -7,6 +7,10 @@
 
 #include "components/adc.h"
 
+
+extern ADC_HandleTypeDef hadc1;
+
+
 // CELL VOLTAGE
 HAL_ADC_Start(&hadc1); //iniciamos la conversion
 HAL_ADC_PollForConversion(&hadc1,200); // esperamos que finalce la conversion

@@ -8,8 +8,11 @@
 #ifndef INC_COMPONENTS_ADC_H_
 #define INC_COMPONENTS_ADC_H_
 
-uint32_t voltageADC= 0;
-uint32_t currentADC= 0;
+#include "stm32f4xx_hal.h"
+
+double voltageADC = 0;
+double currentADC = 0;
+
 
 
 #endif /* INC_COMPONENTS_ADC_H_ */
