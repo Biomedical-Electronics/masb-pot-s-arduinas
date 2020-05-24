@@ -12,6 +12,7 @@
 #include "components/masb_comm_s.h"
 #include "components/dac.h"
 #include "components/timers.h"
+#include "components/adc.h"
 
 extern TIM_HandleTypeDef htim3;
 struct CA_Configuration_S caConfiguration; //preguntar si caConfiguration seran les dades q volem
@@ -29,7 +30,7 @@ void Chronoamperometry(struct CA_Configuration_S caConfiguration){
 
 	HAL_GPIO_WritePin(RELAY_GPIO_Port, RELAY_Pin, GPIO_PIN_SET); //cerramos rele (enviamos a 1), empieza la medida
 
-	SamplingPeriodTimer(); //inicializamos el timer con el periodo modificado
+	SamplingPeriodTimerCA(); //inicializamos el timer con el periodo modificado
 
 }
 

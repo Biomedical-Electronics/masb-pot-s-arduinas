@@ -22,8 +22,7 @@ struct CA_Configuration_S {
 
 };
 
-double voltageADC;
-double currentADC;
+
 uint32_t measureIndex;
 uint32_t TotalMeasuresNumber;
 
