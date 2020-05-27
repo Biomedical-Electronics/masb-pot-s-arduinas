@@ -11,6 +11,7 @@
 #ifndef INC_COMPONENTS_CHRONOAMPEROMETRY_H_
 #define INC_COMPONENTS_CHRONOAMPEROMETRY_H_
 
+
 #include "stm32f4xx_hal.h"
 
 struct CA_Configuration_S {
@@ -20,5 +21,12 @@ struct CA_Configuration_S {
 	uint32_t measurementTime;
 
 };
+
+
+uint32_t measureIndex;
+uint32_t TotalMeasuresNumber;
+
+//Prototypes
+void Chronoamperometry(struct CA_Configuration_S caConfiguration);
 
 #endif /* INC_COMPONENTS_CHRONOAMPEROMETRY_H_ */
