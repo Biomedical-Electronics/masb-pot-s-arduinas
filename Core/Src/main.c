@@ -102,6 +102,7 @@ int main(void)
   MX_TIM3_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  setup();
 
   /* USER CODE END 2 */
 
@@ -109,6 +110,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  loop();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
