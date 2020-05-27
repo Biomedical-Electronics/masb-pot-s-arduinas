@@ -30,6 +30,6 @@ uint32_t measureIndexCV;
 double VCELL;
 
 // Prototypes
-void CiclicVoltammetry(struct CV_Configuration_S cvConfiguration);
+void CyclicVoltammetry(struct CV_Configuration_S cvConfiguration);
 
 #endif /* INC_COMPONENTS_CYCLIC_VOLTAMMETRY_H_ */

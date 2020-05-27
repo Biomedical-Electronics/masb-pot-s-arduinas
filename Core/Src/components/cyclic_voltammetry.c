@@ -18,7 +18,7 @@ extern TIM_HandleTypeDef htim3;
 struct CV_Configuration_S cvConfiguration;
 
 
-void CiclicVoltammetry(struct CV_Configuration_S cvConfiguration){
+void CyclicVoltammetry(struct CV_Configuration_S cvConfiguration){
 
 	measureIndexCV=0; //inicializamos el index de medidas
 
