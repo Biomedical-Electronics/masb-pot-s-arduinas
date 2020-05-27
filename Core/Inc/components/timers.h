@@ -12,7 +12,8 @@
 
 //Prototype functions
 
-void SamplingPeriodTimer(void);
+void SamplingPeriodTimerCA(void);
+void SamplingPeriodTimerCV(void);
 
 
 #endif /* INC_COMPONENTS_TIMERS_H_ */
