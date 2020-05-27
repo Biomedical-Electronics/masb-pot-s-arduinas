@@ -6,6 +6,9 @@
  */
 
 #include "components/stm32main.h"
+#include "components/pmu.h"
+#include "components/chronoamperometry.h"
+#include "components/cyclic_voltammetry.h"
 
 #include "components/masb_comm_s.h"
 
@@ -17,6 +20,7 @@ struct CA_Configuration_S caConfiguration;
 void setup(void) {
 
 	MASB_COMM_S_waitForMessage(); //waiting the first message
+	StartPMU();
 
 }
 
@@ -31,6 +35,8 @@ void loop(void) {
 			case START_CV_MEAS:
 
 				cvConfiguration = MASB_COMM_S_getCvConfiguration();
+				CyclicVoltammetry(cvConfiguration);
+
 
 
 				break;
@@ -38,6 +44,7 @@ void loop(void) {
 			case START_CA_MEAS:
 
 				caConfiguration = MASB_COMM_S_getCaConfiguration();
+				Chronoamperometry(caConfiguration);
 
 				break;
 
@@ -45,12 +52,7 @@ void loop(void) {
 				break;
 
 			default:
-				data.point = 1;
-				data.timeMs = 100;
-				data.voltage = 0.23;
-				data.current = 12.3e-6;
 
-				MASB_COMM_S_sendData(data);
 
 				break;
 		}
