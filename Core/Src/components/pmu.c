@@ -8,9 +8,7 @@
 #include "components/pmu.h"
 #include "main.h"
 
+
 void StartPMU(void) {  //funcion que inicia PMU
-
-	estadoPMU = TRUE;
-	HAL_GPIO_WritePin(EN_GPIO_Port, EN_Pin, estadoPMU); //PMU habilitada
-
+	HAL_GPIO_WritePin(EN_GPIO_Port, EN_Pin, GPIO_PIN_SET); //habilitamos PMU
 }

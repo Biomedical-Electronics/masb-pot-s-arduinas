@@ -18,6 +18,7 @@ void MASB_COMM_i2c_sendData(double voltageDAC);
 uint16_t sendValue;
 
 uint8_t i2cDataDAC[2];
+uint8_t address;
 
 
 #endif /* INC_COMPONENTS_DAC_H_ */

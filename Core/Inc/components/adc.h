@@ -10,9 +10,8 @@
 
 #include "stm32f4xx_hal.h"
 
-double voltageADC = 0;
-double currentADC = 0;
 
-
+uint32_t GetVoltageADC(void);
+uint32_t GetCurrentADC(void);
 
 #endif /* INC_COMPONENTS_ADC_H_ */

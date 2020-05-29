@@ -16,10 +16,11 @@
     #define FALSE				0
 #endif
 
-_Bool estadoPMU = FALSE;
+
 
 
 //Prototypes
 void StartPMU(void);
+
 
 #endif /* INC_COMPONENTS_PMU_H_ */
