@@ -22,8 +22,6 @@ struct CA_Configuration_S {
 
 };
 
-
-uint32_t measureIndex;
 uint32_t TotalMeasuresNumber;
 
 //Prototypes

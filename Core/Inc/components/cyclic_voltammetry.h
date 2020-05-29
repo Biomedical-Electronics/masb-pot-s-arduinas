@@ -24,9 +24,9 @@ struct CV_Configuration_S {
 
 };
 
-uint8_t cycle = 0;
+uint8_t cycle;
 double vObjetivo;
-uint32_t measureIndexCV;
+
 double VCELL;
 
 // Prototypes

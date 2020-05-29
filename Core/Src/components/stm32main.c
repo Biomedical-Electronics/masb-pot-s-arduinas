@@ -9,55 +9,48 @@
 #include "components/pmu.h"
 #include "components/chronoamperometry.h"
 #include "components/cyclic_voltammetry.h"
-
 #include "components/masb_comm_s.h"
 
-struct CV_Configuration_S cvConfiguration; //on guardarem dades per configuració serie
-
+struct CV_Configuration_S cvConfiguration;
 struct CA_Configuration_S caConfiguration;
-
 
 void setup(void) {
 
-	MASB_COMM_S_waitForMessage(); //waiting the first message
-	StartPMU();
+	MASB_COMM_S_waitForMessage(); //funcion para quedar a la espera de recibir un mensaje
+	StartPMU(); //llamamos funcion que habilita PMU
 
 }
 
 void loop(void) {
 
-	struct Data_S data;
+	if (MASB_COMM_S_dataReceived()) { //si recibimos un mensaje a partir del host (aplicacion Visense)
 
-	if (MASB_COMM_S_dataReceived()) {
+		switch(MASB_COMM_S_command()) { //gestion del mensaje recibido
 
-		switch(MASB_COMM_S_command()) { //gestió del missatge rebut
+			case START_CV_MEAS: //si recibimos la orden de hacer una CV
 
-			case START_CV_MEAS:
-
-				cvConfiguration = MASB_COMM_S_getCvConfiguration();
-				CyclicVoltammetry(cvConfiguration);
-
-
+				cvConfiguration = MASB_COMM_S_getCvConfiguration(); //guardamos configuracion de los parametros
+				CyclicVoltammetry(cvConfiguration); //llamamos funcion para realizar la CV
 
 				break;
 
-			case START_CA_MEAS:
+			case START_CA_MEAS: //si recibimos la orden de hacer una CA
 
-				caConfiguration = MASB_COMM_S_getCaConfiguration();
-				Chronoamperometry(caConfiguration);
-
-				break;
-
-			case STOP_MEAS:
-				break;
-
-			default:
-
+				caConfiguration = MASB_COMM_S_getCaConfiguration(); //guardamos configuracion de los parametros
+				Chronoamperometry(caConfiguration); //llamamos funcion para realizar la CA
 
 				break;
+
+			case STOP_MEAS: //si recibimos la orden de parar
+
+				break; //no hacemos nada
+
+			default: //en el caso de recibir cualquier otra cosa
+
+				break; //no hacemos nada
 		}
 
-		MASB_COMM_S_waitForMessage(); //un cop acabi, torno a esperar el següent
+		MASB_COMM_S_waitForMessage(); //cuando acaba la gestion del mensaje, esperamos al siguiente
 	}
 
 }

@@ -19,7 +19,7 @@
   * 						bytes codificado.
   * @return Número de bytes resultantes de la codificación.
   */
-uint32_t COBS_encode(uint8_t *decodedMessage, uint32_t lenght, uint8_t *codedMessage) {
+uint32_t COBS_encode(uint8_t *decodedMessage, uint32_t lenght, uint8_t *codedMessage) { //funcion para codificar los datos a enviar en COBS
 
   uint32_t read_index = 0,
 		   write_index = 1,
@@ -71,7 +71,7 @@ uint32_t COBS_encode(uint8_t *decodedMessage, uint32_t lenght, uint8_t *codedMes
   * 						bytes decodificado.
   * @return Número de bytes resultantes de la decodificación.
   */
-uint32_t COBS_decode(uint8_t *codedMessage, uint32_t lenght, uint8_t *decodedMessage) {
+uint32_t COBS_decode(uint8_t *codedMessage, uint32_t lenght, uint8_t *decodedMessage) { //funcion para decodificar los datos recibidos en COBS
 
   uint32_t read_index = 0,
            write_index = 0;
