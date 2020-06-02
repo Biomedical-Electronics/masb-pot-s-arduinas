@@ -25,7 +25,7 @@ void CyclicVoltammetry(struct CV_Configuration_S cvConfiguration){ //funcion que
 
 	vObjetivo = cvConfiguration.eVertex1; //fijamos el valor de vObjetivo a tension eVertex1
 
-	MASB_COMM_i2c_sendData(VCELL); //enviamos la tension al DAC para fijarla en la celda mediante i2c
+	//MASB_COMM_i2c_sendData(VCELL); //enviamos la tension al DAC para fijarla en la celda mediante i2c
 
 	HAL_GPIO_WritePin(RELAY_GPIO_Port, RELAY_Pin, GPIO_PIN_SET); //cerramos rele, empieza la medida
 
@@ -73,7 +73,7 @@ void CyclicVoltammetry(struct CV_Configuration_S cvConfiguration){ //funcion que
 						} else { //Si, en cambio, Vcell no es igual a la tension objetivo definida
 							if (VCELL + cvConfiguration.eStep > vObjetivo){ //si Vcell + el step es superior al objetivo
 								VCELL= 1.65-vObjetivo/2; //definimos la tension de la celda (Vcell) a la tensio objetivo
-								MASB_COMM_i2c_sendData(VCELL); //enviamos la tension al DAC para fijarla en la celda mediante i2c
+								//MASB_COMM_i2c_sendData(VCELL); //enviamos la tension al DAC para fijarla en la celda mediante i2c
 
 							} else { // y Vcell + el step no es superior al objetivo
 								if (vObjetivo == cvConfiguration.eVertex1){ //si el objetivo es eVertex1

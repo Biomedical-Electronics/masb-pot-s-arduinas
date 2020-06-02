@@ -24,7 +24,7 @@ void Chronoamperometry(struct CA_Configuration_S caConfiguration){ //funcion que
 
 	double voltageDAC=1.65-caConfiguration.eDC/2; //definimos la tension de la celda (Vcell) a partir de tension eDC
 
-	MASB_COMM_i2c_sendData(voltageDAC); //enviamos la tension al DAC para fijarla en la celda mediante i2c
+	//MASB_COMM_i2c_sendData(voltageDAC); //enviamos la tension al DAC para fijarla en la celda mediante i2c
 
 	HAL_GPIO_WritePin(RELAY_GPIO_Port, RELAY_Pin, GPIO_PIN_SET); //cerramos rele, empieza la medida
 
