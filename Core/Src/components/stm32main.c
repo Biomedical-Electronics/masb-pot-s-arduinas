@@ -50,6 +50,7 @@ void loop(void) {
 				break; //no hacemos nada
 		}
 
+
 		MASB_COMM_S_waitForMessage(); //cuando acaba la gestion del mensaje, esperamos al siguiente
 	}
 
