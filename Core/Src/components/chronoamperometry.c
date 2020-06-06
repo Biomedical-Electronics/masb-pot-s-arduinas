@@ -19,7 +19,7 @@ struct CA_Configuration_S caConfiguration;
 
 void Chronoamperometry(struct CA_Configuration_S caConfiguration){ //funcion que realiza la cronoamperometria
 
-	TotalMeasuresNumber=(caConfiguration.measurementTime)*10e3/caConfiguration.samplingPeriodMs;
+	TotalMeasuresNumber=((caConfiguration.measurementTime)*1000)/caConfiguration.samplingPeriodMs;
 	//calculamos el total de medidas que debemos realizar
 
 	double voltageDAC=1.65-caConfiguration.eDC/2; //definimos la tension de la celda (Vcell) a partir de tension eDC
@@ -39,14 +39,14 @@ void Chronoamperometry(struct CA_Configuration_S caConfiguration){ //funcion que
 		while(wait == TRUE) { //cuando transcurre el periodo entre medidas
 
 			struct Data_S data;
-			measureIndex++;
 
 			data.point=measureIndex; //guardamos el numero de medida en el que estamos
 			data.timeMs = measureIndex*caConfiguration.samplingPeriodMs; //guardamos el tiempo de medida transcurrido
 			data.voltage = (1.65-GetVoltageADC())*2; //medimos Vcell(real) con los datos del ADC
-			data.current = (GetCurrentADC()-1.65)*2/10e3; //medimos Icell con los datos del ADC
+			data.current = (GetCurrentADC()-1.65)*2/1000; //medimos Icell con los datos del ADC
 
 			MASB_COMM_S_sendData(data); //enviamos datos al host (aplicacion Visense)
+			measureIndex++;
 
 			wait = FALSE; //desactivamos bandera para esperar hasta que pase el periodo entre medidas
 		}
