@@ -112,7 +112,7 @@ La gestión de la PMU se ha realizado mediante el uso de una función, que es ll
 
 ***Relé*** 
 
-El potenciostato integra un relé, que se encarga de abrir y cerrar el circuito entre el *front-end* y el sensor electroquímico. Por defecto, el relé debe de estar abierto para que estos dos módulos no estén conectados eléctricamente. Al realizar una medición, se debe cerrar el relé y cuando ésta acaba, debe volver a cerrarse. Esto se realiza mediante el pin `RELAY` , que también ha sido configurado como **salida digital**. 
+El potenciostato integra un relé, que se encarga de abrir y cerrar el circuito entre el *front-end* y el sensor electroquímico. Por defecto, el relé debe de estar abierto para que estos dos módulos no estén conectados eléctricamente. Al realizar una medición, se debe cerrar el relé y cuando ésta acaba, debe volver a abrirse. Esto se realiza mediante el pin `RELAY` , que también ha sido configurado como **salida digital**. 
 
 Le gestión del relay no se realiza mediante un archivo con una función aparte. Se implementa directamente mediante la función `HAL_GPIO_WritePin` dentro de las funciones que gestionan la CV y la CA.
 
@@ -162,7 +162,7 @@ La comunicación se ha gestionada a través de otro archivo .c y su cabecera, ll
 
 ***Timers***
 
-Se ha utilizado un timer del microcontrolador para controlar con exactitud el tiempo pasado entre muestra y muestra. En un archivo `timers.c` se han implementado dos funciones, una para el periodo de muestreo de la CV y otro para la CA. El timer es preconfigurado mediante STM32MX y en las funciones se cambia el periodo del timer para ponerlo en función del tiempo enviado por el `host`. Además, en ese archivo se implementa la interrupción del timer, que cambia el estado a `TRUE` de una variable de bandera llamada `wait`. Cuando se realiza este cambio, las funciones CV y CA realizaran los pasos y medidas pertinentes, que se indican en los diagramas de flujo que verán más adelante. 
+Se ha utilizado un timer del microcontrolador para controlar con exactitud el tiempo pasado entre muestra y muestra. En un archivo `timers.c` se han implementado dos funciones, una para el periodo de muestreo de la CV y otro para la CA. El timer es preconfigurado mediante STM32MX y en las funciones se cambia el periodo del timer para ponerlo en función del tiempo enviado por el *host*. Además, en ese archivo se implementa la interrupción del timer, que cambia el estado a `TRUE` de una variable de bandera llamada `wait`. Cuando se realiza este cambio, las funciones CV y CA realizaran los pasos y medidas pertinentes, que se indican en los diagramas de flujo que verán más adelante. 
 
 Finalmente, la siguiente tabla muestra un resumen de la configuración de los pines usados para el proyecto.
 
