@@ -3,8 +3,10 @@
 <img align="left" src="https://img.shields.io/badge/Proyecto-Potenciostato-yellow"><img align="left" src="https://img.shields.io/badge/Entorno de desarrollo-STM32CubeIDE-blue"><img align="left" src="https://img.shields.io/badge/Versión-v0.1.0-green"></br>
 
 ```
+
 [//]: # (Claudia Aymerich Moreno: https://www.linkedin.com/in/claudia-aymerich-moreno-57174a171/)
 [//]: # (Júlia Rey Vilches: https://www.linkedin.com/in/j%C3%BAlia-rey-vilches-5272a9180/)
+
 ```
 
 Este informe consiste en la descripción del **proyecto final** realizado para la asignatura  de *Microcontroladores para aplicaciones y sistemas biomédicos* del grado de **Ingeniería Biomédica** de la Universidad de Barcelona. 
@@ -24,7 +26,11 @@ Un potenciostato es un **dispositivo electrónico** requerido para **controlar u
 
 El potenciostato utilizado en este proyecto está formado por un *front-end* que ha sido específicamente diseñado para la asignatura y un *back-end* que consiste en la *Evaluation Board* (EVB) NUCLEO-F401RE de STMicroelectronics.
 
-![Potenciostato](https://github.com/Biomedical-Electronics/mab-pot-s-arduinas/blob/master/Docs/assets/Potentiostat.PNG)
+<p align="center">
+<a href="Docs/assets/Potentiostat.PNG">
+<img src="Docs/assets/Potentiostat.PNG" alt="Potenciostato" />
+</a>
+</p>
 
 ### Voltametría cíclica
 
@@ -176,19 +182,35 @@ Finalmente, la siguiente tabla muestra un resumen de la configuración de los pi
 
 En este apartado se presenten los diagramas de flujo del funcionamiento principal de la aplicación y de las dos funcionalidades que realizan las medidas de CV y CA.
 
-![flow app](https://github.com/Biomedical-Electronics/mab-pot-s-arduinas/blob/master/Docs/assets/app-flow.png)
+<p align="center">
+<a href="Docs/assets/app-flow.png">
+<img src="Docs/assets/imgs/app-flow.png" alt="flow app" />
+</a>
+</p>
 
 > Flujo correspondiente a la operativa del usuario con el dispositivo y la aplicación de escritorio instalada en el *host*.
 
-![main](https://github.com/Biomedical-Electronics/mab-pot-s-arduinas/blob/master/Docs/assets/Main_ES.png)
+<p align="center">
+<a href="Docs/assets/Main_ES.png">
+<img src="Docs/assets/Main_ES.png" alt="main" />
+</a>
+</p>
 
 > Flujo correspondiente a la operativa del microcontrolador en función de la instrucción recibida.
 
-![flow CV](https://github.com/Biomedical-Electronics/mab-pot-s-arduinas/blob/master/Docs/assets/CV_diagram_ES.png)
+<p align="center">
+<a href="Docs/assets/CV_diagram_ES.png">
+<img src="Docs/assets/CV_diagram_ES.png" alt="Flow CV" />
+</a>
+</p>
 
 > Flujo correspondiente a la operativa del microcontrolador al realizar una voltametría cíclica.
 
-![flow CA](https://github.com/Biomedical-Electronics/mab-pot-s-arduinas/blob/master/Docs/assets/ca-flow.png)
+<p align="center">
+<a href="Docs/assets/ca-flow.png">
+<img src="Docs/assets/ca-flow.png" alt="flow ca" />
+</a>
+</p>
 
 > Flujo correspondiente a la operativa del microcontrolador al realizar una cronoamperometría. 
 
@@ -208,25 +230,45 @@ Su funcionamiento es explicado en el siguiente vídeo.
 
 Como se ha indicado anteriormente, debido a la pandemia provocada por el **Sars-Cov-2**,  el código creado para el funcionamiento del potenciostato no se ha podido poner a prueba en el laboratorio. De todos modos, se han podido hacer pruebas mediante la aplicación viSens-S, utilitzando nuestra STM32 Nucleo-F401RE de STMicroelectronics con un potenciómetro. Se ha hecho un divisor de tensión, conectando el variable terminal en las entradas analógicas definidas.  A continuación, se puede ver una imagen de la conexión.
 
-![potenciometre](https://github.com/Biomedical-Electronics/mab-pot-s-arduinas/blob/master/Docs/assets/potenciometre1.PNG)
+<p align="center">
+<a href="Docs/assets/potenciometre1.PNG">
+<img src="Docs/assets/potenciometre1.PNG" alt="potenciometre" />
+</a>
+</p>
 
 Se tiene que tener en cuenta que para poder realizar el test, se ha comentado el código relativo al DAC, puesto que, como no teníamos el componente físico, el microcontrolador se quedaría congelado y el programa no funcionaría. 
 
 Las siguientes imágenes muestran los datos obtenidos con el potenciómetro conectado al microcontrolador a través de la aplicación viSens-S. Estos tests han servido para **verificar el funcionamiento del código implementado para las dos técnicas comentadas (voltametría cíclica y cronoamperometría) y la conexión entre el *host* (microcontrolador) y la aplicación de escritorio (viSens-S)**.
 
-![graph CA](https://github.com/Biomedical-Electronics/mab-pot-s-arduinas/blob/master/Docs/assets/PLOT_CA.PNG)
+<p align="center">
+<a href="Docs/assets/PLOT_CA.PNG">
+<img src="Docs/assets/PLOT_CA.PNG" alt="graph ca" />
+</a>
+</p>
 
 > Ejemplo de la representación gráfica de los resultados de una cronoamperometría con la aplicación viSens-S.
 
-![data CA](https://github.com/Biomedical-Electronics/mab-pot-s-arduinas/blob/master/Docs/assets/DATA_CA.PNG)
+<p align="center">
+<a href="Docs/assets/DATA_CA.PNG">
+<img src="Docs/assets/DATA_CA.PNG" alt="data ca" />
+</a>
+</p>
 
 > Ejemplo de los datos obtenidos de una cronoamperometría con la aplicación viSens-S.
 
-![graph CV](https://github.com/Biomedical-Electronics/mab-pot-s-arduinas/blob/master/Docs/assets/PLOT_CV.PNG)
+<p align="center">
+<a href="Docs/assets/PLOT_CV.PNG">
+<img src="Docs/assets/PLOT_CV.PNG" alt="plot cv" />
+</a>
+</p>
 
 > Ejemplo de la representación gráfica de los resultados de una voltametría cíclica con la aplicación viSens-S.
 
-![data CV](https://github.com/Biomedical-Electronics/mab-pot-s-arduinas/blob/master/Docs/assets/DATA_CV.PNG)
+<p align="center">
+<a href="Docs/assets/DATA_CV.PNG">
+<img src="Docs/assets/DATA_CV.PNG" alt="data cv" />
+</a>
+</p>
 
 > Ejemplo de los datos obtenidos de una voltametría cíclica con la aplicación viSens-S.
 
