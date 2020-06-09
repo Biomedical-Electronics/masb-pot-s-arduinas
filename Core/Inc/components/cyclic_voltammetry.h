@@ -24,4 +24,12 @@ struct CV_Configuration_S {
 
 };
 
+uint8_t cycle;
+double vObjetivo;
+
+double VCELL;
+
+// Prototypes
+void CyclicVoltammetry(struct CV_Configuration_S cvConfiguration);
+
 #endif /* INC_COMPONENTS_CYCLIC_VOLTAMMETRY_H_ */

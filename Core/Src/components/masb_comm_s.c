@@ -70,7 +70,7 @@ uint8_t MASB_COMM_S_command(void) {
 
 }
 
-struct CV_Configuration_S MASB_COMM_S_getCvConfiguration(void){
+struct CV_Configuration_S MASB_COMM_S_getCvConfiguration(void){ //funcion para obtener los parametros de configuracion para la CV
 
 	struct CV_Configuration_S cvConfiguration;
 
@@ -85,7 +85,7 @@ struct CV_Configuration_S MASB_COMM_S_getCvConfiguration(void){
 
 }
 
-struct CA_Configuration_S MASB_COMM_S_getCaConfiguration(void){
+struct CA_Configuration_S MASB_COMM_S_getCaConfiguration(void){ //funcion para obtener los parametros de configuracion para la CA
 
 	struct CA_Configuration_S caConfiguration;
 
@@ -97,7 +97,7 @@ struct CA_Configuration_S MASB_COMM_S_getCaConfiguration(void){
 
 }
 
-void MASB_COMM_S_sendData(struct Data_S data) {
+void MASB_COMM_S_sendData(struct Data_S data) { //funcion para enviar los parametros obtenidos durante una CV o cA
 
 	saveLongAsByteArrayIntoBuffer(txBufferDecoded, 0, data.point);
 	saveLongAsByteArrayIntoBuffer(txBufferDecoded, 4, data.timeMs);
