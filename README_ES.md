@@ -1,13 +1,11 @@
 # Proyecto MASB-POT-S
 
-<img align="left" src="https://img.shields.io/badge/Proyecto-Potenciostato-yellow"><img align="left" src="https://img.shields.io/badge/Entorno de desarrollo-STM32CubeIDE-blue"><img align="left" src="https://img.shields.io/badge/Versión-v0.1.0-green"></br>
+<img align="left" src="https://img.shields.io/badge/Proyecto-Potenciostato-yellow"><img align="left" src="https://img.shields.io/badge/Entorno de desarrollo-STM32CubeIDE-blue"></br>
 
-```
+> Proyecto desarrollado por: Claudia Aymerich Moreno y Júlia Rey Vilches
 
-[//]: # (Claudia Aymerich Moreno: https://www.linkedin.com/in/claudia-aymerich-moreno-57174a171/)
-[//]: # (Júlia Rey Vilches: https://www.linkedin.com/in/j%C3%BAlia-rey-vilches-5272a9180/)
-
-```
+[//]: # "Claudia Aymerich Moreno: https://www.linkedin.com/in/claudia-aymerich-moreno-57174a171/"
+[//]: # "Júlia Rey Vilches: https://www.linkedin.com/in/j%C3%BAlia-rey-vilches-5272a9180/"
 
 Este informe consiste en la descripción del **proyecto final** realizado para la asignatura  de *Microcontroladores para aplicaciones y sistemas biomédicos* del grado de **Ingeniería Biomédica** de la Universidad de Barcelona. 
 
