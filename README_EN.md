@@ -48,7 +48,7 @@ It is a widely used method in electrochemistry, due to its relative ease of impl
 
 ## Contents 
 
-- [Introduction](#introduction)
+- [Introduction](#masb-pot-s-project)
   
   * [Potentiostat](#potentiostat)
   

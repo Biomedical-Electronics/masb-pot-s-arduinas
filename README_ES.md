@@ -49,11 +49,11 @@ Es un método ampliamente utilizado en electroquímica, debido a su relativa fac
 
 ## Contenidos 
 
-- [Introducción](#introducción)
+- [Introducción](#proyecto-masb-pot-s)
   
-  * [Potenciostato](#potentiostat)
+  * [Potenciostato](#potenciostato)
   
-  - [Voltammetría cíclica](#voltammetría-cíclica)
+  - [Voltametría cíclica](#voltametría-cíclica)
   - [Cronoamperometría](#cronoamperometría)
   - [Objetivos](#objetivos)
   
