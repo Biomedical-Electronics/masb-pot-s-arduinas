@@ -22,7 +22,7 @@ Un potenciostato es un **dispositivo electrónico** requerido para **controlar u
 
 - **Medir la intensidad de corriente** que circula entre los electrodos de trabajo y auxiliar (corriente de la celda).
 
-El potenciostato utilizado en este proyecto está formado por un *front-end* que ha sido específicamente diseñado para la asignatura y un *back-end* que consiste en la *Evaluation Board* (EVB) NUCLEO-F401RE de STMicroelectronics.
+El potenciostato utilizado en este proyecto está formado por un *front-end* que ha sido específicamente diseñado para la asignatura y un *back-end* que consiste en la *Evaluation Board* (EVB) NUCLEO-F401RE.
 
 <p align="center">
 <a href="Docs/assets/Potentiostat.PNG">
